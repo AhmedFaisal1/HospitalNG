@@ -1,0 +1,48 @@
+<button nz-button (click)="addRow()" nzType="primary">Add</button>
+    <br />
+    <br />
+    <nz-table #editRowTable nzBordered [nzData]="listOfData">
+      <thead>
+        <tr>
+          <th>id</th>
+          <th nzWidth="30%">Name</th>
+          <th>IsActive</th>
+          <th>Price</th>
+          <th>ServiceType</th>
+          <th nzWidth="30%">Action</th>
+
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let data of editRowTable.data" class="editable-row">
+          <td>
+            <div class="editable-cell" [hidden]="editid === data.id" (click)="startEdit(data.id)">
+              {{ data.id }}
+            </div>
+          <td>{{ data.name }}</td>
+            <input [hidden]="editid !== data.id" type="text" nz-input [(ngModel)]="data.name" (blur)="stopEdit()" />
+          <!-- </td> -->
+          <td>{{ data.IsActive }}</td>
+          <td>{{ data.Price }}</td>
+          <td>{{ data.ServiceType }}</td>
+
+          <td>
+            <a nz-popconfirm nzPopconfirmTitle="Sure to delete?" (nzOnConfirm)="deleteRow(data.id)">Delete-update</a>
+          </td>
+        </tr>
+      </tbody>
+    </nz-table>
+
+    <style>
+      .editable-cell {
+        position: relative;
+        padding: 5px 12px;
+        cursor: pointer;
+      }
+
+      .editable-row:hover .editable-cell {
+        border: 1px solid #d9d9d9;
+        border-radius: 4px;
+        padding: 4px 11px;
+      }
+    </style>

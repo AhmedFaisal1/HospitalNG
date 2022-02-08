@@ -1,0 +1,69 @@
+<nz-layout>
+  <nz-content class="outer-content">
+    <nz-layout class="inner-layout">
+      <nz-sider nzWidth="200px" nzTheme="light">
+        <ul nz-menu nzMode="vertical" class="sider-menu">
+          <li nz-submenu nzOpen nzTitle="overview" nzIcon="user" routerLink="/main/overview"></li>
+          <li nz-submenu nzTitle="Patients" nzIcon="laptop">
+            <ul>
+              <li nz-menu-item routerLink="/main/patient/appoiments">appointments</li>
+              <li nz-menu-item routerLink="/main/patient/patients">Patients</li>
+              <li nz-menu-item routerLink="/main/patient/opd">OPD</li>
+                  <li nz-menu-item routerLink="/main/patient/ipd">IPD</li>
+                </ul>
+          </li>
+          <!-- <li nz-submenu nzTitle="Inventory" nzIcon="setting">
+            <ul>
+              <li nz-menu-item>Pharmacy</li>
+              <li nz-menu-item>Medicine</li>
+              <li nz-menu-item>Blood Bank</li>
+              <li nz-menu-item>Beds</li>
+            </ul>
+          </li> -->
+          <li nz-submenu nzTitle="Medical Services" nzIcon="setting">
+            <ul>
+              <li nz-menu-item routerLink="/main/services/laboratory">laboratory</li>
+              <li nz-menu-item routerLink="/main/services/radiology">radiology</li>
+            </ul>
+          </li><li nz-submenu nzTitle="Organizations" nzIcon="setting">
+            <ul>
+              <li nz-menu-item routerLink="/main/organizations/staff">Staffs</li>
+              <li nz-menu-item routerLink="/main/organizations/departments">Departments</li>
+            </ul>
+          <!-- </li><li nz-submenu nzTitle="Finace" nzIcon="setting">
+            <ul>
+              <li nz-menu-item>Option 9</li>
+              <li nz-menu-item>Option 10</li>
+              <li nz-menu-item>Option 11</li>
+            </ul> -->
+          </li><li nz-submenu nzTitle="Calendar" nzIcon="setting" routerLink="/main/calendar">
+
+          </li><li nz-submenu nzTitle="Setting" nzIcon="setting">
+            <ul>
+              <li nz-menu-item routerLink="/main/settings/users">Users</li>
+              <li nz-menu-item routerLink="/main/settings/roles">Roles</li>
+            </ul>
+          </li>
+        </ul>
+      </nz-sider>
+      <router-outlet></router-outlet>
+    </nz-layout>
+  </nz-content>
+</nz-layout>
+
+<style>
+      .inner-layout {
+        padding: 24px 0;
+        background: #fff;
+      }
+
+      .sider-menu {
+        height: 100%;
+      }
+
+      .inner-content {
+        padding: 0 24px;
+        min-height: 280px;
+      }
+
+</style>

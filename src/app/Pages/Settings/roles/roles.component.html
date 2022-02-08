@@ -1,0 +1,17 @@
+<nz-table class="resize" #borderedTable nzBordered nzTitle="Roles Management" [nzData]="dataSet" >
+  <thead>
+    <tr>
+      <th>ID</th>
+      <th>Name</th>
+      <th>Role</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let data of borderedTable.data">
+      <td>{{ data.ID }}</td>
+      <td>{{ data.Name }}</td>
+      <td>{{ data.Role }}</td>
+    </tr>
+  </tbody>
+</nz-table>
+
